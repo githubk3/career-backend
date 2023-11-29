@@ -35,8 +35,8 @@ class UserService {
 
                         if (!result.rowCount) {
                             result = await query(
-                                `INSERT INTO "User" VALUES(DEFAULT, $1, 'user', 'google', now(), now(), $2) RETURNING *`,
-                                [data.name, data.email]
+                                `INSERT INTO "User" VALUES (DEFAULT, $1, 'user', 'google', now(), now(), $2) RETURNING *`,
+                                [data?.name, data?.email]
                             );
                         }
 
